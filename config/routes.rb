@@ -5,9 +5,10 @@ Wecare::Application.routes.draw do
 
 
   get "users/edit"
+  resources :users
 
 match '/home',      :to => 'pages#home'
-match '/signup',  :to => 'users#new'
+match '/signup',    :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

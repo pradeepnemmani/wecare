@@ -16,6 +16,7 @@ group :assets do
   gem 'rspec-rails'
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
+  gem 'gravatar_image_tag', '0.1.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
