@@ -1,19 +1,26 @@
 Wecare::Application.routes.draw do
 
+  #get "microposts/new"
+
+ # get "microposts/show"
+
 resources :sessions, :only => [:new, :create, :destroy]
-  get "users/show"
+resources :microposts, :only =>[:new,:create, :edit,:destroy]
+  #get "users/show"
+
 
 
 
   get "users/edit"
   resources :users
+  resources :microposts
 
-match '/home',      :to => 'pages#home'
-match '/signup',    :to => 'users#new'
-match '/signin',   :to => 'sessions#new'
-match '/signout',  :to => 'sessions#destroy'
-  match '/home',      :to => 'pages#home'
-
+match '/home',        :to => 'pages#home'
+match '/signup',      :to => 'users#new'
+match '/signin',      :to => 'sessions#new'
+match '/signout',     :to => 'sessions#destroy'
+match '/addtopic',    :to => "microposts#new"
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

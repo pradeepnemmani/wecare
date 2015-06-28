@@ -1,0 +1,54 @@
+
+
+<table class="profile" summary="Profile Information">
+	<tr> 
+		<td class="main">
+			
+				<%if @microposts.any? %>
+					<h1><%= @title %></h1>
+				<div id="box-table-a">			 
+							
+				<table >
+					 <tr>
+						
+						 <th>Name</th>
+						 <th>Delete</th>
+						 <th>Edit</th>
+					 </tr>
+				 
+				 		<% @microposts.each do |micropost| %>
+				 	<tr>
+				 		
+				 		<td>
+				 			<%=link_to micropost.name, micropost %>
+				 		</td>
+				 		<td>
+				 			<%=link_to "delete", micropost, :method => :delete,
+																	:confirm => "You sure?"%>
+				 		</td>
+				 		<td>
+				 			<%=link_to "Edit" , "" %>
+				 		</td>
+				 	</tr>
+
+				 <% end %>
+				
+				</table>
+
+			
+</div>
+
+<% else %>
+<p>
+	<h1>
+		No Topics!
+	</h1>
+</p>
+<% end %>
+<%=link_to "New Topic", addtopic_path %>
+		</td>
+		<td class= "sidebar round">
+			<%= render 'shared/sidebar_details' %>
+		</td>
+	</tr>
+</table>

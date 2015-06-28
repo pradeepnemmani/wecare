@@ -1,3 +1,20 @@
+<%if signed_in? %>
+
+<table class="profile" summary="Profile Information">
+	<tr> 
+		<td class="main">
+			<h1>
+				<%= gravatar_for current_user %>
+				<%= current_user.name %>
+			</h1>
+		</td>
+		<td class= "sidebar round">
+			<%= render 'shared/sidebar_details' %>
+		</td>
+	</tr>
+</table>
+<% else %>
 <h1><%= @title %></h1>
 <p>Spread awareness about the various and most harmful cancers which can affect women. A platform for medical practitioners and social service organizations to engage in community awareness and education programs</p>
 <%= link_to "Sign up now!", signup_path, :class => "signup_botton round" %>
+<% end %>

@@ -39,6 +39,12 @@ before_save :encrypt_password
        encrypted_password == encrypt(submitted_password)
    end
 
+def feed
+    Micropost.where("user_id = ?", id)
+end
+def get_micropost(mic_id)
+    Micropost.where("id = ?", mic_id)
+   end
 
 class << self
   

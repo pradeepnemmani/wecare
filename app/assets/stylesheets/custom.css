@@ -119,3 +119,65 @@ ul.users {
   list-style: none;
   
  }
+
+ /* Topics */
+ 
+
+#box-table-a
+{
+  
+  width: 350px;
+  text-align: left;
+  border-collapse: collapse;
+
+  margin-right: auto;
+  height: 300px;
+  overflow : scroll;
+  
+  
+}
+#box-table-a th
+{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+  background: #3366ff;
+  border-top: 4px solid #aabcfe;
+  border-bottom: 1px solid #fff;
+  color: black;
+}
+#box-table-a td
+{
+  padding: 8px;
+  background: #e8edff; 
+  border-bottom: 1px solid #fff;
+  color: #669;
+  border-top: 1px solid transparent;
+  vertical-align: top;
+  
+}
+#box-table-a tr:hover td
+{
+  background: #d0dafd;
+  color: #339;
+}
+
+
+table{
+  border: solid, 5Px, black;
+  border: 5;
+}
+
+.copyright{
+  
+  font-family:  Courier, Times New Roman;
+  font-size: 10px;
+  color: grey;
+}
+
+#id1{
+  
+  font-family:  Courier, Times New Roman;
+  font-size: 25px;
+  color: grey;
+}
