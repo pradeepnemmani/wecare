@@ -21,7 +21,7 @@ RSpec.describe Micropost, :type => :model do
 			before(:each) do
 				@micropost = @user.microposts.create!(@attr)
 			end
-			it " should have auser attribute" do
+			it " should have a user attribute" do
 				@micropost.should respond_to(:user)
 			end
 
