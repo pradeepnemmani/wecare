@@ -23,12 +23,12 @@
 				 			<%=link_to micropost.name, micropost %>
 				 		</td>
 				 		<td>
-	<%=link_to "delete", micropost, :method => :delete,
-																	:confirm => "You sure?"
-																	%>
+							<%=link_to "delete", micropost, :method => :delete,
+																		:confirm => "You sure?"	%>
+																
 				 		</td>
 				 		<td>
-				 			<%=link_to "Edit" , "" %>
+				 			<%=link_to "edit", edit_micropost_path(micropost)%>
 				 		</td>
 				 	</tr>
 

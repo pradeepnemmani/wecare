@@ -1,5 +1,8 @@
 Wecare::Application.routes.draw do
 
+  resources :posts
+
+
   #get "microposts/new"
 
  # get "microposts/show"

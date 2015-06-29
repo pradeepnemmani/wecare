@@ -9,10 +9,10 @@ RSpec.describe PagesController, :type => :controller do
 	      expect(response).to have_http_status(:success)
 	    end
 
-	    #it " should have the title 'Home' " do
-	    #	get :home
-	    #	response.body.should have_selector("title", :cotent => "Home")
-	    #end
+	    it " should have the title 'Home' " do
+	    	get :home
+	    	response.body.should have_selector("title", :cotent => "Home")
+	    end
 
 	     it "should have a non-blank body" do
       		get  :home

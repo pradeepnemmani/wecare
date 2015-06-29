@@ -18,8 +18,7 @@ class MicropostsController < ApplicationController
 
   def show
   	@title = "Topics"	
-  	@user = current_user
-  	@microposts= @user.microposts
+  @micropost = Micropost.find(params[:id])
   end
 
   def index
@@ -31,17 +30,24 @@ class MicropostsController < ApplicationController
 
 def edit
 	@title =" Edit Topic"
-	@User= current_user
-	@micropost =@user.get_micropost(params[:id])
+	@micropost =Micropost.find(params[:id])
+end
+
+def update
+  @micropost = Micropost.find(params[:id])
+  if @micropost.update_attributes(params[:micropost])
+    redirect_to microposts_path, :flash => {:sucsess => "Topic edited successfully!"}
+  else
+    @title = "Edit Topic"
+    render 'edit'
+  end
 
 end
 
 def destroy
-	debugger
-	@micropost = current_user.get_micropost(params[:id])
-	 	@micropost.destroy
+    Micropost.destroy(params[:id])
 	 	redirect_to microposts_path
-	 end
+end
 
   private
 
