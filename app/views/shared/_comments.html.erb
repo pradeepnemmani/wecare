@@ -1,0 +1,30 @@
+<% if @comments.any? %>
+	
+	<table class="microposts" >
+		
+		<% @comments.each do |comment| %>
+		<tr>
+			<td class="gravatar">
+				<%= link_to gravatar_for(comment.micropost.user), comment.micropost.user, :options => {:size => 35}%>
+			</td>
+			<td class="micropost">
+				<span class="user">
+					<%= link_to comment.micropost.user.name, comment.micropost.user %>
+				</span>
+			
+				<span class ="content">
+					<%= comment.comment%>
+				</span><br/>
+				<span class="timestamp">
+					Posted <%= time_ago_in_words(comment.created_at)%> ago.
+				</span>
+			</td>
+			
+		</tr>
+		<%#= will_paginate%>
+		<% end %>
+	</table>
+	
+
+<% end %>
+<%= render 'shared/comment_form' %>

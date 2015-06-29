@@ -1,10 +1,11 @@
 <table>
 	<tr>
-		<td class="table_topic">
+		<td class="maim">
 			<h2><%= @micropost.name%></h2>
 			<p><%= @micropost.description %></p>
+			<%= render 'shared/comments' %>
 		</td>
-
+		
 	</tr>
 	
 </table>

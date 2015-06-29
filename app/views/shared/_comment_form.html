@@ -1,0 +1,14 @@
+<%= form_for(@comment) do |f| %>
+	
+	<div class="field" style="visibility: hidden">
+		<%=f.label :micropost_id %>
+		<%=f.text_field :micropost_id %>
+	</div>
+	<div class="field">
+		<%=f.text_field :comment %>
+		
+	</div>
+	<div class="actions"> 
+	<%= f.submit "comment"%>
+	</div>
+<% end %>

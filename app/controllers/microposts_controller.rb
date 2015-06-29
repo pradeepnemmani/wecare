@@ -19,12 +19,16 @@ class MicropostsController < ApplicationController
   def show
   	@title = "Topics"	
   @micropost = Micropost.find(params[:id])
+  @comments = @micropost.comments
+  @comment=Comment.new(:micropost_id => params[:id])
+ 
   end
 
   def index
   	@title = "Topics"	
   	@user = current_user
-  	@microposts= @user.microposts
+  	@microposts= Micropost.all
+    @comment= Comment.new
   end
 
 

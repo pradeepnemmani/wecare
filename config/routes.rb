@@ -1,12 +1,16 @@
 Wecare::Application.routes.draw do
 
+  get "comments/new"
+
+  get "comments/create"
+
   resources :posts
 
 
   #get "microposts/new"
 
  # get "microposts/show"
-
+resources :comments
 resources :sessions, :only => [:new, :create, :destroy]
 resources :microposts, :only =>[:new,:create, :edit,:destroy]
   #get "users/show"
