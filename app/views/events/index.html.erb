@@ -1,0 +1,56 @@
+
+
+<table class="microposts" summary="Events Information">
+	<tr> 
+		<td class="main">
+			
+				<%if @events.any? %>
+					<h1><%= @title %></h1>
+				<div id="box-table-a">			 
+							
+				<table >
+					 <tr>
+						
+						 <th>Name</th>
+						 <th>Posted</th>
+						 <th>delete</th>
+						 <th>edit</th>
+					 </tr>
+				 
+				 		<% @events.each do |event| %>
+				 	<tr>
+				 		<td>
+				 			<%=link_to event.name, event %>
+				 		</td
+				 		<td>
+							<%= time_ago_in_words(event.created_at) %>
+																
+				 		</td>
+				 		<td>
+							<%=link_to "delete", event, :method => :delete,data: { confirm: 'Are you sure?' } %>																
+				 		</td>
+				 		<td>
+				 			<%=link_to "edit", edit_event_path(event)%>
+				 		</td>
+				 	</tr>
+
+				 <% end %>
+				
+				</table>
+
+			
+</div>
+
+<% else %>
+<p>
+	<h1>
+		No Events Created Yet!
+	</h1>
+</p>
+<% end %> 
+<%=link_to "New Event", addevent_path %>
+<%=link_to "Back", home_path %>
+		</td>
+		
+	</tr>
+</table>

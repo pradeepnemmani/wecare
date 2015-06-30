@@ -1,5 +1,21 @@
 Wecare::Application.routes.draw do
+  get "events/new"
 
+  get "events/create"
+
+  get "events/show"
+
+  get "events/destroy"
+
+  get "events/index"
+
+  get "events/edit"
+
+  get "topics/index"
+
+  get "users/edit"
+
+  
   get "comments/new"
 
   get "comments/create"
@@ -13,12 +29,14 @@ Wecare::Application.routes.draw do
 resources :comments
 resources :sessions, :only => [:new, :create, :destroy]
 resources :microposts, :only =>[:new,:create, :edit,:destroy]
+resources :topics
+resources :events
   #get "users/show"
 
 
 
 
-  get "users/edit"
+  
   resources :users
   resources :microposts
 
@@ -27,6 +45,8 @@ match '/signup',      :to => 'users#new'
 match '/signin',      :to => 'sessions#new'
 match '/signout',     :to => 'sessions#destroy'
 match '/addtopic',    :to => "microposts#new"
+match '/addevent',       :to => 'events#new'
+#match '/admins',      :to => 'admin#index'
  
   # The priority is based upon order of creation:
   # first created -> highest priority.

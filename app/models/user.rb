@@ -9,6 +9,7 @@
 #  updated_at         :datetime         not null
 #  encrypted_password :string(255)
 #  salt               :string(255)
+#  admin              :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -19,6 +20,7 @@ class User < ActiveRecord::Base
    email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
    has_many :microposts
+   has_many :events
 
     validates :name,  :presence => true,
   					:length   => { :maximum => 50}

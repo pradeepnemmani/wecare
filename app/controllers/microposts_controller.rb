@@ -27,7 +27,7 @@ class MicropostsController < ApplicationController
   def index
   	@title = "Topics"	
   	@user = current_user
-  	@microposts= Micropost.all
+  	@microposts= current_user.microposts
     @comment= Comment.new
   end
 
