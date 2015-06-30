@@ -41,7 +41,7 @@ RSpec.describe Comment, :type => :model do
  		end
 
  		it " should reject the long comment's " do
- 			long_comment = 'a' *  21
+ 			long_comment = 'a' *  101
  			@mp.comments.build(@comment.merge(:comment => long_comment)).should_not be_valid
  		
  		end
