@@ -1,0 +1,24 @@
+
+	<% if @events.any?  %>
+		<div class="events_container">
+			<%#= will_paginate %>
+			<ul class="microposts">
+				<% @events.each do |event| %>
+				<div class= "event">
+						<h3>
+							<%= event.name %>
+						</h3>
+						<p>
+							On-Date: <%= event.on_date%><br/>
+							End-Date: <%= event.end_date%>
+						</p>
+						<p>
+							<%= event.description%>
+						</p>
+				</div>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	

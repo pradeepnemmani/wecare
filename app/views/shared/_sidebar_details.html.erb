@@ -1,3 +1,4 @@
 <strong>Name: </strong><%= current_user.name %><br/>
 			<strong>URL: </strong><%= link_to user_path(current_user), user_path(current_user) %><br/>
 		<strong>Topics: </strong><%= current_user.microposts.count %><br/>
+		<strong>Events: </strong><%=current_user.events.count %>

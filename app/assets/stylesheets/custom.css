@@ -39,7 +39,7 @@ nav{
    nav ul li a :visited{
    	color: #09c;
    }
-   nav ul li a:hover{
+   nav ul li a :hover{
    	text-decoration:  underline;
    }
 
@@ -180,4 +180,28 @@ table{
   font-family:  Courier, Times New Roman;
   font-size: 25px;
   color: grey;
+}
+
+/* commants*/
+.comman_scroll{
+width: 680px;
+  text-align: left;
+  border-collapse: collapse;
+
+  margin-right: auto;
+  height: 300px;
+  overflow : scroll;
+}
+
+.events_container
+{
+  width: 690px;
+  
+}
+.event{
+  background: #cff;
+}
+.event_date
+{
+  margin-left: auto;
 }

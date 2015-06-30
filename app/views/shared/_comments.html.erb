@@ -1,17 +1,16 @@
 <% if @comments.any? %>
 	
-	<table class="microposts" >
+	<div class="comman_scroll" >
+	<table >
 		
 		<% @comments.each do |comment| %>
 		<tr>
 			<td class="gravatar">
-				<%= link_to gravatar_for(comment.micropost.user), comment.micropost.user, :options => {:size => 35}%>
+				<%= link_to gravatar_for(User.find(comment.user_id)), User.find(comment.user_id), :options => {:size => 35}%>
+				<%= link_to User.find(comment.user_id).name, User.find(comment.user_id).name %>
+				
 			</td>
 			<td class="micropost">
-				<span class="user">
-					<%= link_to comment.micropost.user.name, comment.micropost.user %>
-				</span>
-			
 				<span class ="content">
 					<%= comment.comment%>
 				</span><br/>
@@ -24,7 +23,7 @@
 		<%#= will_paginate%>
 		<% end %>
 	</table>
-	
+	</div>
 
 <% end %>
 <%= render 'shared/comment_form' %>

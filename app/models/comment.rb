@@ -17,5 +17,5 @@ class Comment < ActiveRecord::Base
   validates :user_id,  :presence => true
 
   validates :comment,  :presence => true,
-  						:length => { :maximum => 20}
+  						:length => { :maximum => 100}
 end

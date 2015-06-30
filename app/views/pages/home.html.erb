@@ -7,12 +7,17 @@
 				<%= gravatar_for current_user %>
 				<%= current_user.name %>
 			</h1>
+
 		</td>
 		<td class= "sidebar round">
 			<%= render 'shared/sidebar_details' %>
 		</td>
 	</tr>
+	<tr>
+		
+	</tr>
 </table>
+<%= render 'shared/wecare_events' %>
 <% else %>
 <h1><%= @title %></h1>
 <p>Spread awareness about the various and most harmful cancers which can affect women. A platform for medical practitioners and social service organizations to engage in community awareness and education programs</p>
